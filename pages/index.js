@@ -5,8 +5,8 @@ export default function Home() {
     <>
         <NextHead tilte="How powerful is SSG??"/>
 
+
         
-      
     </>
   )
 }
