@@ -2,7 +2,7 @@ import NextHead from 'components/NextHead';
 import APIURl from 'lib/URL';
 import { Container, Card } from 'react-bootstrap';
 
-export default function Post({ post }) {
+export default function Post({ comment }) {
     return (
         <>
             <NextHead />
@@ -10,8 +10,9 @@ export default function Post({ post }) {
             <Container className="flex-center">
                 <Card>
                     <Card.Body>
-                        <Card.Title>{post.title}</Card.Title>
-                        <Card.Text>{post.body}</Card.Text>
+                        <Card.Title>{comment.name}</Card.Title>
+                        <Card.Link>{comment.email}</Card.Link>
+                        <Card.Text>{comment.body}</Card.Text>
                     </Card.Body>
                 </Card>
             </Container>
@@ -20,7 +21,7 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch(`${APIURl}/posts`);
+    const res = await fetch(`${APIURl}/comments`);
     const posts = await res.json();
 
     const paths = posts.map((post) => {
@@ -39,13 +40,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(`${APIURl}/posts/${params.id}`);
-    const post = await res.json();
-
+    const res = await fetch(`${APIURl}/comments/${params.id}`);
+    const comment = await res.json();
 
     return {
         props: {
-            post,
+            comment,
         },
     };
 }
