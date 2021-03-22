@@ -1,6 +1,6 @@
-/* add custom bootstrap variables here */
-
-
-
-
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
