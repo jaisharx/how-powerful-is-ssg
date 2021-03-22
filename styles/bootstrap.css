@@ -1,6 +1,18 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .main-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+
+.center-list {
+    width: 40vw;
+    margin: auto;
 }
