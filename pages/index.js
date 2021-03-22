@@ -1,13 +1,11 @@
-import Head from 'next/head'
+import NextHead from 'components/NextHead'
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>How powerful is SSG??</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+        <NextHead tilte="How powerful is SSG??"/>
 
+        
       
     </>
   )
